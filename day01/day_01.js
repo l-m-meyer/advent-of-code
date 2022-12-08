@@ -27,12 +27,22 @@ const returnTotalCaloriesPerElf = (getAllElvesCalories) => {
     }
   }
 
-  return printElfWithMostCalories(totalCaloriesPerElf);
+  printElfWithMostCalories(totalCaloriesPerElf);
+  printCaloriesOfTopThreeElves(totalCaloriesPerElf);
 }
 
 const printElfWithMostCalories = (totalCaloriesPerElf) => {
   const getElfWithMostCalories = Math.max(...totalCaloriesPerElf);
   console.log('Elf with most calories:', getElfWithMostCalories);
+}
+
+const printCaloriesOfTopThreeElves = (totalCaloriesPerElf) => {
+  const caloriesOfTopThreeElves =
+    totalCaloriesPerElf
+      .sort((a, b) => b - a)
+      .slice(0, 3)
+      .reduce((acc, curr) => acc + curr, 0);
+  console.log('Total calories of top three elves:', caloriesOfTopThreeElves);
 }
 
 returnAllElvesCalories();
