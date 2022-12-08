@@ -1,3 +1,4 @@
+// part 1
 import { readFile } from 'node:fs/promises';
 
 
@@ -68,7 +69,7 @@ const playGameStrategies = (gameStrategies) => {
         }
         break;
       case 'C':
-        points.opponent += shapePoints.paper;
+        points.opponent += shapePoints.scissors;
         if (game[1] === 'X') {
           points.opponent += outcomePoints.lose;
           points.you += outcomePoints.win + shapePoints.rock;
