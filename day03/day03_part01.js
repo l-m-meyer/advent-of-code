@@ -11,14 +11,14 @@ const getAllRucksacks = async () => {
     input
       .split(/\r\n/gm);
 
-  const priorities = returnPriorities(rucksacks);
+  const priorities = returnPriorities();
   getRucksackItems(rucksacks, priorities);
 }
 
 // convert each item type to a priority
 // lowercase items 'a' to 'z' have priorities 1-26
 // uppercase items 'A' to 'Z' have priorities 27-52
-const returnPriorities = (rucksacks) => {
+const returnPriorities = () => {
   const items = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   const priorities = {};
